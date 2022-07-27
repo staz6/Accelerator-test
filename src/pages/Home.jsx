@@ -9,6 +9,15 @@ import FillButton from "../components/CustomButton/FillButton";
 import VideoComponent from "../components/VideoComponent";
 import CookieBar from "../components/CookieBar";
 import { centerDiv } from "../styles/styles";
+import CustomRadio from "../components/CustomRadio";
+import RectangleDisc from "../images/Rectangledisc.png"
+import RectangleAir from "../images/Startup-image.png"
+import RectangleDash from "../images/Rectangledash.png"
+import RectangleFile from "../images/Rectanglefile.png"
+import RectangleArrow from "../images/Rectanglearrow.png"
+import { getIcons } from "../helpers/helper";
+
+
 
 const HomeContainer = styled('div')(({theme})=>({
     paddingBottom:"5vh"
@@ -28,7 +37,7 @@ const ContentContainer = styled('div')(({theme})=>({
     textAlign:"center"
 }))
 
-const TopHeading = styled("p")(
+const HeaderHeading = styled("p")(
   ({ theme, fontSize, paddingTop, fontWeight, color,lineHeight }) => ({
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.primary[color],
@@ -41,13 +50,42 @@ const TopHeading = styled("p")(
   })
 );
 
+
+
 const RadioContainer = styled(centerDiv)(({theme})=>({
-    height:"250px",
+    display:"flex",
+    justifyContent:"space-between",
+    marginTop:"10vh"
 }))
 
+const CardContainer = styled(centerDiv)(({theme})=>({
+  marginTop:"5vh"
+}))
 
+const TopHeading = styled('h4')(({theme})=>({
+  fontFamily: theme.typography.fontFamily,
+  color:theme.palette.primary.main,
+  fontSize:"24px",
+
+}))
+const Heading = styled('h2')(({theme})=>({
+  fontFamily: theme.typography.fontFamily,
+  color:theme.palette.primary.secondary,
+  fontSize:"40px",
+  paddingTop:"10px",
+  paddingBottom:"5px"
+}))
+const SubHeading = styled('p')(({theme})=>({
+  fontFamily: theme.typography.fontFamily,
+  color:theme.palette.primary.subHeading,
+  fontSize:"18px"
+}))
+
+const icon=getIcons([RectangleDisc,RectangleAir,RectangleDash,RectangleFile,RectangleArrow])
 
 function Home() {
+
+  console.log(icon)
   return (
     <HomeContainer>
         <LandingContainer >
@@ -66,7 +104,7 @@ function Home() {
       />
 
      <ContentContainer>
-     <TopHeading
+     <HeaderHeading
         fontSize={"1.8em"}
         paddingTop={"4vh"}
         fontWeight={600}
@@ -74,12 +112,12 @@ function Home() {
         lineHeight={"165%"}
       >
         Join in and Connect
-      </TopHeading>
-      <TopHeading fontSize={"72px"} fontWeight={700} color={"primary"}>
+      </HeaderHeading>
+      <HeaderHeading fontSize={"72px"} fontWeight={700} color={"primary"}>
         To faster your <br />
         innovation potential
-      </TopHeading>
-      <TopHeading
+      </HeaderHeading>
+      <HeaderHeading
         fontSize={"20px"}
         paddingTop={"1vh"}
         fontWeight={400}
@@ -88,7 +126,7 @@ function Home() {
       >
         AcceleratorApp Innovation Community — Tools and community to <br />
         facilitate innovation between all members of our community
-      </TopHeading>
+      </HeaderHeading>
 
       <FillButton text={"Schedule a Demo"} textColor={"headerButton"} marginTop={"2vh"}/>
      </ContentContainer>
@@ -96,10 +134,27 @@ function Home() {
         <VideoComponent/>
         <CookieBar/>
 
-        <RadioContainer>
-
-        </RadioContainer>
+       
     </LandingContainer>
+    <RadioContainer>
+          {
+            icon.map((val,index)=>{
+              return(
+                <CustomRadio icon={val.icon} marginTop={val.marginTop} index={index}/>
+              )
+            })
+          }
+        </RadioContainer>
+    <CardContainer>
+          <TopHeading>Community</TopHeading>
+          <Heading>Lorem ipsum dolor sit amet</Heading>
+          <SubHeading>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</SubHeading>
+
+          <Grid container spacing={2}>
+            
+          </Grid>
+
+    </CardContainer>
     </HomeContainer>
   );
 }

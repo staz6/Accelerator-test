@@ -16,6 +16,7 @@ const theme = createTheme({
       cookieBar:"#1F304C",
       sub: "#6B788A",
       subGrey: "#E7EAEE",
+      subHeading:"#6B788A"
     },
     background: {
       main: "#206ECF",

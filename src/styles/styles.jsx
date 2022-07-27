@@ -6,7 +6,7 @@ export const flexCenter = styled("div")(({ theme }) => ({
 }));
 
 export const centerDiv = styled("div")(({theme})=>({
-  width:"90%",
+  width:"80%",
   marginRight:"auto",
   marginLeft:"auto"
 }))
