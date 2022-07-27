@@ -16,8 +16,13 @@ const theme = createTheme({
     },
     background: {
       main: "#206ECF",
+      primary:"#FFFFFF",
+      border:{
+        white:"1px solid white"
+      }
       
     },
+    
   },
   
 });
