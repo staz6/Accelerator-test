@@ -1,19 +1,22 @@
 import React from 'react'
 import { styled } from "@mui/material/styles";
-import { flexCenter } from '../../styles/styles';
 import FillButton from '../CustomButton/FillButton';
 import BorderButton from '../CustomButton/BorderButton';
 
 
-const CookieContainer = styled(flexCenter)(({theme})=>({
+const CookieContainer = styled('div')(({theme})=>({
     width:"100%",
     height:"10vh",
     backgroundColor:theme.palette.background.primary,
     boxShadow:"0px 8px 24px 8px rgba(0, 0, 0, 0.08)",
-    justifyContent:"space-evenly"
+    justifyContent:"space-evenly",
+    display: "flex",
+    alignItems: "center",
 }))
 
-const ButtonContainer = styled(flexCenter)(({theme})=>({
+const ButtonContainer = styled('div')(({theme})=>({
+    display: "flex",
+    alignItems: "center",
     columnGap:"20px"
 }))
 

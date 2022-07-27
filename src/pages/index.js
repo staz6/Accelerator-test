@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import * as React from "react";
+import "@fontsource/poppins"
 import Navbar from "../components/Navbar";
 import Home from "./Home";
 
@@ -16,8 +17,13 @@ const theme = createTheme({
       cookieBar:"#1F304C",
       sub: "#6B788A",
       subGrey: "#E7EAEE",
-      subHeading:"#6B788A"
+      subHeading:"#6B788A",
+      communityCard:{
+        heading:"#363C45",
+        content:"#33475B",
+      }
     },
+
     background: {
       main: "#206ECF",
       primary: "#FFFFFF",

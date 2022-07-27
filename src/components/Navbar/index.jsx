@@ -2,7 +2,6 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import { Grid } from "@mui/material";
 import LogoIcon from "../../icons/LogoIcon";
-import { flexCenter } from "../../styles/styles";
 import CustomButton from "../CustomButton";
 import FillButton from "../CustomButton/FillButton";
 
@@ -19,7 +18,7 @@ const CenterContainer = styled("div")(({ theme }) => ({
   allignItems: "center",
   justifyContent: "space-between",
 }));
-const LogoContainer = styled(flexCenter)(({ theme }) => ({
+const LogoContainer = styled('div')(({ theme }) => ({
   "& > svg": {
     width: "49px",
     height: "49px",
@@ -33,10 +32,12 @@ const LogoContainer = styled(flexCenter)(({ theme }) => ({
   },
 }));
 
-const LinkContainer = styled(flexCenter)(({ theme }) => ({
+const LinkContainer = styled('div')(({ theme }) => ({
   justifyContent: "space-evenly",
   height: "100%",
   width: "70%",
+  display: "flex",
+    alignItems: "center",
 }));
 
 const NavLinks = styled("p")(({ theme }) => ({

@@ -15,7 +15,8 @@ import RectangleAir from "../images/Startup-image.png"
 import RectangleDash from "../images/Rectangledash.png"
 import RectangleFile from "../images/Rectanglefile.png"
 import RectangleArrow from "../images/Rectanglearrow.png"
-import { getIcons } from "../helpers/helper";
+import { getGridData, getIcons } from "../helpers/helper";
+import CommunityCard from "../components/Cards/CommunityCard";
 
 
 
@@ -82,7 +83,7 @@ const SubHeading = styled('p')(({theme})=>({
 }))
 
 const icon=getIcons([RectangleDisc,RectangleAir,RectangleDash,RectangleFile,RectangleArrow])
-
+const communityCard=getGridData();
 function Home() {
 
   console.log(icon)
@@ -150,8 +151,14 @@ function Home() {
           <Heading>Lorem ipsum dolor sit amet</Heading>
           <SubHeading>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</SubHeading>
 
-          <Grid container spacing={2}>
-            
+          <Grid container spacing={2} style={{marginTop:"8vh"}} >
+              {
+                communityCard.map((val,index)=>{
+                  return(
+                    <CommunityCard title={val} index={index}/>
+                  )
+                })
+              }
           </Grid>
 
     </CardContainer>

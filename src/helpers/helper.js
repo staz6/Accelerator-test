@@ -18,5 +18,5 @@ export const  getIcons = (icons) =>{
 }
 
 export const getGridData = () =>{
-    return ["Incubator/Accelerator","Coporations","Investor","Startup"]
+    return ["Incubator/Accelerator","Coporations","Investor","Startup","Open Challenge"]
 }
