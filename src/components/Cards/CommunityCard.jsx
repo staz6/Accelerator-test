@@ -25,7 +25,7 @@ import communityPlane from '../../svg/communityPlane.svg'
 import FillButton from '../CustomButton/FillButton';
 const icons=[communityBar,communityDash,communityChart,communityPlane,communityPlus]
 const CustomCard = styled(Card)(({theme})=>({
-  fontFamily:theme.typography.fontFamily,
+  
   boxShadow:"0px 8px 24px 8px rgba(0, 0, 0, 0.08)",
   borderRadius:"8px",
   "& .avatar":{
@@ -35,17 +35,17 @@ const CustomCard = styled(Card)(({theme})=>({
   "& .MuiCardHeader-title":{
     color:theme.palette.primary.communityCard.heading,
     fontWeight:600,
-    fontFamily:theme.typography.fontFamily,
+    
     fontSize:"24px"
 },
 "& .cardContent":{
     lineHeight:"23px",
     color:theme.palette.primary.communityCard.content,
-    fontFamily:theme.typography.fontFamily,
+    
 },
 "& .featuers":{
   color:theme.palette.primary.communityCard.content,
-  fontFamily:theme.typography.fontFamily,
+  
   fontSize:"16px",
   fontWeight:"600",
   marginTop:"10px",
@@ -56,7 +56,7 @@ const CustomCard = styled(Card)(({theme})=>({
 },
 "& .MuiListItemText-primary":{
   color:theme.palette.primary.communityCard.content,
-  fontFamily:theme.typography.fontFamily,
+  
 },
 "& .action":{
   paddingTop:"25px",

@@ -40,7 +40,7 @@ const ContentContainer = styled('div')(({theme})=>({
 
 const HeaderHeading = styled("p")(
   ({ theme, fontSize, paddingTop, fontWeight, color,lineHeight }) => ({
-    fontFamily: theme.typography.fontFamily,
+    
     color: theme.palette.primary[color],
     fontSize: fontSize,
     fontWeight: fontWeight,
@@ -64,20 +64,20 @@ const CardContainer = styled(centerDiv)(({theme})=>({
 }))
 
 const TopHeading = styled('h4')(({theme})=>({
-  fontFamily: theme.typography.fontFamily,
+  
   color:theme.palette.primary.main,
   fontSize:"24px",
 
 }))
 const Heading = styled('h2')(({theme})=>({
-  fontFamily: theme.typography.fontFamily,
+  
   color:theme.palette.primary.secondary,
   fontSize:"40px",
   paddingTop:"10px",
   paddingBottom:"5px"
 }))
 const SubHeading = styled('p')(({theme})=>({
-  fontFamily: theme.typography.fontFamily,
+  
   color:theme.palette.primary.subHeading,
   fontSize:"18px"
 }))
