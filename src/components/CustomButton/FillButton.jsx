@@ -12,6 +12,10 @@ const ButtonContainer = styled(Button)(
     fontWeight: 600,
     paddingLeft:"20px",
     paddingRight:"20px",
+    [theme.breakpoints.down("sm")]:{
+      paddingRight:"2px",
+      paddingLeft:"2px",
+    },
     "&:hover":{
         backgroundColor: bg ? theme.palette.background[bg] : theme.palette.background.primary,
     }

@@ -3,6 +3,7 @@ import * as React from "react";
 import "@fontsource/poppins"
 import Navbar from "../components/Navbar";
 import Home from "./Home";
+import Footer from "../components/Footer";
 
 const theme = createTheme({
   typography: {
@@ -15,6 +16,7 @@ const theme = createTheme({
       secondary: "#1F2024",
       headerButton:"#1B1E22",
       cookieBar:"#1F304C",
+      footer:"#F3F5F7",
       sub: "#6B788A",
       subGrey: "#E7EAEE",
       subHeading:"#6B788A",
@@ -27,6 +29,7 @@ const theme = createTheme({
     background: {
       main: "#206ECF",
       primary: "#FFFFFF",
+      footer:"#1B1E22",
       border: {
         white: "1px solid white",
         main:"1px solid #206ECF"
@@ -41,6 +44,7 @@ const IndexPage = () => {
     <ThemeProvider theme={theme}>
       <Navbar />
       <Home />
+      <Footer/>
     </ThemeProvider>
   );
 };

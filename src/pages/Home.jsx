@@ -8,7 +8,7 @@ import CustomButton from "../components/CustomButton";
 import FillButton from "../components/CustomButton/FillButton";
 import VideoComponent from "../components/VideoComponent";
 import CookieBar from "../components/CookieBar";
-import { centerDiv } from "../styles/styles";
+import { CenterDiv, centerDiv } from "../styles/styles";
 import CustomRadio from "../components/CustomRadio";
 import RectangleDisc from "../images/Rectangledisc.png"
 import RectangleAir from "../images/Startup-image.png"
@@ -34,32 +34,57 @@ const LandingContainer = styled(`section`)(({ theme }) => ({
 
 const ContentContainer = styled('div')(({theme})=>({
     width:"100%",
-    height:"100%",
-    textAlign:"center"
+    paddingTop:"4vh",
+    paddingBottom:"5vh",
+    lineHeight:"165%",
+    textAlign:"center",
+    textTransform:"inherit",
+    "& .topHeading":{
+      fontSize:"1.8em",
+      color:theme.palette.primary.subGrey,
+      fontWeight:600,
+      [theme.breakpoints.down("sm")]:{
+        fontSize:"16px"
+      }
+    },
+    "& .mainHeading":{
+      fontSize:"72px",
+      fontWeight:700,
+      color:theme.palette.primary.primary,
+      paddingTop:"4vh",
+      lineHeight:"1em",
+      [theme.breakpoints.down("sm")]:{
+        fontSize:"32px"
+      }
+    },
+    "& .subHeading":{
+      paddingTop:"1vh",
+      fontWeight:400,
+      color:theme.palette.primary.subGrey,
+      [theme.breakpoints.down("sm")]:{
+        fontSize:"14px"
+      }
+    },
+    [theme.breakpoints.down("lg")]:{
+      paddingTop:"8vh",
+  },
 }))
 
-const HeaderHeading = styled("p")(
-  ({ theme, fontSize, paddingTop, fontWeight, color,lineHeight }) => ({
-    
-    color: theme.palette.primary[color],
-    fontSize: fontSize,
-    fontWeight: fontWeight,
-    textTransform: "inherit",
-    textAlign: "center",
-    paddingTop: paddingTop,
-    lineHeight: lineHeight,
-  })
-);
 
 
 
-const RadioContainer = styled(centerDiv)(({theme})=>({
+
+const RadioContainer = styled(CenterDiv)(({theme})=>({
     display:"flex",
     justifyContent:"space-between",
-    marginTop:"10vh"
+    marginTop:"10vh",
+    [theme.breakpoints.down("lg")]:{
+      marginTop:"5vh",
+  },
+
 }))
 
-const CardContainer = styled(centerDiv)(({theme})=>({
+const CardContainer = styled(CenterDiv)(({theme})=>({
   marginTop:"5vh"
 }))
 
@@ -105,38 +130,26 @@ function Home() {
       />
 
      <ContentContainer>
-     <HeaderHeading
-        fontSize={"1.8em"}
-        paddingTop={"4vh"}
-        fontWeight={600}
-        color={"subGrey"}
-        lineHeight={"165%"}
-      >
-        Join in and Connect
-      </HeaderHeading>
-      <HeaderHeading fontSize={"72px"} fontWeight={700} color={"primary"}>
+       <h3 className={"topHeading"}>
+       Join in and Connect
+       </h3>
+        <h1 className={"mainHeading"}>
         To faster your <br />
         innovation potential
-      </HeaderHeading>
-      <HeaderHeading
-        fontSize={"20px"}
-        paddingTop={"1vh"}
-        fontWeight={400}
-        color={"subGrey"}
-        lineHeight={"165%"}
-      >
+        </h1>
+        <h4 className={"subHeading"}>
         AcceleratorApp Innovation Community — Tools and community to <br />
         facilitate innovation between all members of our community
-      </HeaderHeading>
-
-      <FillButton text={"Schedule a Demo"} textColor={"headerButton"} marginTop={"2vh"}/>
+        </h4>
+      <FillButton text={"Schedule a Demo"} textColor={"headerButton"} marginTop={"2vh"} />
      </ContentContainer>
-    
+        
         <VideoComponent/>
-        <CookieBar/>
+        
 
        
     </LandingContainer>
+    <CookieBar/>
     <RadioContainer>
           {
             icon.map((val,index)=>{

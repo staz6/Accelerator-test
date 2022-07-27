@@ -5,10 +5,21 @@ export const FlexCenter = styled("div")(({ theme }) => ({
   alignItems: "center",
 }));
 
-export const centerDiv = styled("div")(({theme})=>({
+export const CenterDiv = styled("div")(({theme})=>({
   width:"80%",
   marginRight:"auto",
-  marginLeft:"auto"
+  marginLeft:"auto",
+  [theme.breakpoints.down("sm")]:{
+    width:"90%"
+  }
+}))
+
+export const CenterFlexDiv = styled("div")(({theme})=>({
+  width:"80%",
+  marginRight:"auto",
+  marginLeft:"auto",
+  display: "flex",
+  alignItems: "center",
 }))
 
 export const subText= styled("p")(({theme,color})=>({

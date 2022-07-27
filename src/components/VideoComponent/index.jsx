@@ -10,6 +10,9 @@ const VideoContainer = styled('div')(({theme})=>({
     left:"25%",
     position:"absolute",
     bottom:0,
+    [theme.breakpoints.down("lg")]:{
+        height:"32vh",
+    }
 }))
 
 function VideoComponent() {

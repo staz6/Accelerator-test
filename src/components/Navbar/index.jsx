@@ -1,24 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
-import { Grid } from "@mui/material";
+import { Grid, useMediaQuery } from "@mui/material";
 import LogoIcon from "../../icons/LogoIcon";
 import CustomButton from "../CustomButton";
 import FillButton from "../CustomButton/FillButton";
+import { FlexCenter } from "../../styles/styles";
+import BorderButton from "../CustomButton/BorderButton";
+import DrawerComponent from "./DrawerComponent";
+import { Drawer, IconButton } from '@mui/material';
+import {MenuIcon} from '@mui/icons-material/Menu'
+import { useTheme } from "@emotion/react";
 
 const Container = styled("div")(({ theme }) => ({
   background: "linear-gradient(110.96deg, #206ECF 0.72%, #71B0FF 100%)",
   height: "8vh",
 }));
-const CenterContainer = styled("div")(({ theme }) => ({
+const CenterContainer = styled(FlexCenter)(({ theme }) => ({
   height: "100%",
-  width: "90%",
+  width: "80%",
   marginLeft: "auto",
   marginRight: "auto",
-  display: "flex",
-  allignItems: "center",
-  justifyContent: "space-between",
 }));
-const LogoContainer = styled('div')(({ theme }) => ({
+const LogoContainer = styled(FlexCenter)(({ theme }) => ({
   "& > svg": {
     width: "49px",
     height: "49px",
@@ -32,12 +35,12 @@ const LogoContainer = styled('div')(({ theme }) => ({
   },
 }));
 
-const LinkContainer = styled('div')(({ theme }) => ({
+const LinkContainer = styled(FlexCenter)(({ theme }) => ({
   justifyContent: "space-evenly",
   height: "100%",
   width: "70%",
-  display: "flex",
-    alignItems: "center",
+  marginLeft:"auto"
+
 }));
 
 const NavLinks = styled("p")(({ theme }) => ({
@@ -46,9 +49,29 @@ const NavLinks = styled("p")(({ theme }) => ({
   fontWeight: 600,
   fontSize: "1em",
   cursor: "pointer",
+  "&:hover":{
+    // color:theme.palette.primary.main
+  }
 }));
 
 function Navbar() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const Drawer = () => {
+    return (
+      <>
+      <Drawer
+      open={openDrawer}
+      onClose={() => setOpenDrawer(false)}
+    >
+        </Drawer>
+        <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
+      <MenuIcon />
+    </IconButton>
+      </>
+  )
+  }
   return (
     <Container>
       <CenterContainer>
@@ -57,11 +80,14 @@ function Navbar() {
           <p>AcceleratorApp</p>
         </LogoContainer>
         <LinkContainer>
+        
+        {
+          isMobile? <DrawerComponent/> : <>
           <NavLinks>Community</NavLinks>
           <NavLinks>Modules</NavLinks>
           <NavLinks>Company</NavLinks>
           <NavLinks>Pricing</NavLinks>
-          <CustomButton
+          <BorderButton
             text={"Sign in"}
             border={"white"}
             textColor={"primary"}
@@ -71,6 +97,9 @@ function Navbar() {
             text={"Request a demo"}
             textColor={"main"}
           />
+          </>
+        }
+          
         </LinkContainer>
       </CenterContainer>
     </Container>

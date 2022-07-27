@@ -1,31 +1,23 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Grid, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { Grid, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
 import Divider from '@mui/material/Divider';
-import communityBar from '../../svg/communityBar.svg'
-import communityDash from '../../svg/communityDash.svg'
-import communityChart from '../../svg/communityChart.svg'
-import communityPlus from '../../svg/communityPlus.svg'
-import communityPlane from '../../svg/communityPlane.svg'
+import { styled } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import * as React from 'react';
+import communityBar from '../../svg/communityBar.svg';
+import communityChart from '../../svg/communityChart.svg';
+import communityDash from '../../svg/communityDash.svg';
+import communityPlane from '../../svg/communityPlane.svg';
+import communityPlus from '../../svg/communityPlus.svg';
 import FillButton from '../CustomButton/FillButton';
 const icons=[communityBar,communityDash,communityChart,communityPlane,communityPlus]
 const CustomCard = styled(Card)(({theme})=>({
-  
+  width:"100%",
   boxShadow:"0px 8px 24px 8px rgba(0, 0, 0, 0.08)",
   borderRadius:"8px",
   "& .avatar":{
@@ -36,20 +28,20 @@ const CustomCard = styled(Card)(({theme})=>({
     color:theme.palette.primary.communityCard.heading,
     fontWeight:600,
     
-    fontSize:"24px"
+    fontSize:"1.3em"
 },
 "& .cardContent":{
-    lineHeight:"23px",
+    lineHeight:"1.2em",
     color:theme.palette.primary.communityCard.content,
     
 },
 "& .featuers":{
   color:theme.palette.primary.communityCard.content,
   
-  fontSize:"16px",
+  fontSize:"1.2em",
   fontWeight:"600",
-  marginTop:"10px",
-  paddingBottom:"10px"
+  marginTop:"5vh",
+  paddingBottom:"3vh"
 },
 "& .checkIcon":{
   fill:theme.palette.primary.main
@@ -59,7 +51,7 @@ const CustomCard = styled(Card)(({theme})=>({
   
 },
 "& .action":{
-  paddingTop:"25px",
+  paddingTop:"6vh",
   display:"flex",
   justifyContent:"center",
   paddingBottom:"20px",
@@ -80,7 +72,7 @@ const Bar = styled(Divider)(({theme})=>({
 function CommunityCard({title,index}) {
     return (
         <Grid item lg={4} md={4} sm ={6} xs={12}>
-            <CustomCard sx={{ maxWidth: 345 }}>
+            <CustomCard >
       <CardHeader
         avatar={
           <Avatar className={"avatar"} aria-label="recipe">

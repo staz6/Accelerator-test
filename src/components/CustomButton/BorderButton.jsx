@@ -11,6 +11,9 @@ const ButtonContainer = styled(Button)(
     fontWeight: 600,
     border:theme.palette.background.border[border],
     width:width,
+    [theme.breakpoints.down("sm")]:{
+      width:"auto"
+    },
     "&:hover":{
         backgroundColor: "inherit",
     }
