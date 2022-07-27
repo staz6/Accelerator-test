@@ -4,36 +4,35 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 
 const ButtonContainer = styled(Button)(
-  ({ theme, textColor, borderColor, bg, border, width, fontWeight }) => ({
+  ({ theme, textColor,border,width }) => ({
     textTransform: "inherit",
     color: theme.palette.primary[textColor],
-    backgroundColor: theme.palette.background[bg],
-    border: theme.palette.background.border[border],
-    width: width,
-    fontWeight: fontWeight,
+    backgroundColor: "inherit",
+    fontWeight: 600,
+    border:theme.palette.background.border[border],
+    width:width,
+    "&:hover":{
+        backgroundColor: "inherit",
+    }
   })
 );
 
-function CustomButton({
+function BorderButton({
   text,
-  border,
-  bg,
   textColor,
+  border,
   width,
-  fontWeight,
   handleOnClick,
 }) {
   return (
     <ButtonContainer
       textColor={textColor}
-      border={border}
-      bg={bg}
       width={width}
-      fontWeight={fontWeight}
+      border={border}
     >
       {text}
     </ButtonContainer>
   );
 }
 
-export default CustomButton;
+export default BorderButton;

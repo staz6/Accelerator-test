@@ -8,33 +8,34 @@ const theme = createTheme({
     fontFamily: "Poppins",
   },
   palette: {
-    primary:{
-      main:"#206ECF",
-      primary:"#FFFFFF",
-      secondary:"#1F2024",
-      sub:"#6B788A"
+    primary: {
+      main: "#206ECF",
+      primary: "#FFFFFF",
+      secondary: "#1F2024",
+      headerButton:"#1B1E22",
+      cookieBar:"#1F304C",
+      sub: "#6B788A",
+      subGrey: "#E7EAEE",
     },
     background: {
       main: "#206ECF",
-      primary:"#FFFFFF",
-      border:{
-        white:"1px solid white"
-      }
-      
+      primary: "#FFFFFF",
+      border: {
+        white: "1px solid white",
+        main:"1px solid #206ECF"
+      },
     },
-    
   },
-  
 });
 
 // markup
 const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
-        <Navbar/>
-        <Home />
+      <Navbar />
+      <Home />
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
