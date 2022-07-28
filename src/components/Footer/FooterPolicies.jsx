@@ -68,13 +68,13 @@ const FooterList = styled(List)(({ theme }) => ({
       textAlign: "center",
     },
   },
-  [theme.breakpoints.down("sm")]:{
+  [theme.breakpoints.down("sm")]: {
     "& .MuiListItem-root": {
-        width: "30%",
-        textAlign: "center",
-        fontSize:"10px"
-      },
-  }
+      width: "30%",
+      textAlign: "center",
+      fontSize: "10px",
+    },
+  },
 }));
 
 function FooterPolicies() {
@@ -98,7 +98,11 @@ function FooterPolicies() {
         ) : (
           <>
             <>
-              <FooterList disablePadding className={"footerMobile"} style={{justifyContent:"center"}}>
+              <FooterList
+                disablePadding
+                className={"footerMobile"}
+                style={{ justifyContent: "center" }}
+              >
                 <ListItem disablePadding>
                   <ListItemText>
                     <FooterLink to="/">{tmp[0]}</FooterLink>
@@ -111,8 +115,12 @@ function FooterPolicies() {
                 </ListItem>
                 <FooterBar />
               </FooterList>
-              <FooterBar style={{width:"60%",marginLeft:"20%"}}/>
-              <FooterList disablePadding className={"footerMobile"} style={{justifyContent:"center"}}>
+              <FooterBar style={{ width: "60%", marginLeft: "20%" }} />
+              <FooterList
+                disablePadding
+                className={"footerMobile"}
+                style={{ justifyContent: "center" }}
+              >
                 <ListItem disablePadding>
                   <ListItemText>
                     <FooterLink to="/">{tmp[2]}</FooterLink>

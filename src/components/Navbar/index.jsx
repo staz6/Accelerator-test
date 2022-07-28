@@ -7,8 +7,8 @@ import FillButton from "../CustomButton/FillButton";
 import { FlexCenter } from "../../styles/styles";
 import BorderButton from "../CustomButton/BorderButton";
 import DrawerComponent from "./DrawerComponent";
-import { Drawer, IconButton } from '@mui/material';
-import {MenuIcon} from '@mui/icons-material/Menu'
+import { Drawer, IconButton } from "@mui/material";
+import { MenuIcon } from "@mui/icons-material/Menu";
 import { useTheme } from "@emotion/react";
 
 const Container = styled("div")(({ theme }) => ({
@@ -39,8 +39,7 @@ const LinkContainer = styled(FlexCenter)(({ theme }) => ({
   justifyContent: "space-evenly",
   height: "100%",
   width: "70%",
-  marginLeft:"auto"
-
+  marginLeft: "auto",
 }));
 
 const NavLinks = styled("p")(({ theme }) => ({
@@ -49,9 +48,9 @@ const NavLinks = styled("p")(({ theme }) => ({
   fontWeight: 600,
   fontSize: "1em",
   cursor: "pointer",
-  "&:hover":{
-    opacity:"0.8"
-  }
+  "&:hover": {
+    opacity: "0.8",
+  },
 }));
 
 function Navbar() {
@@ -61,17 +60,13 @@ function Navbar() {
   const Drawer = () => {
     return (
       <>
-      <Drawer
-      open={openDrawer}
-      onClose={() => setOpenDrawer(false)}
-    >
-        </Drawer>
+        <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}></Drawer>
         <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-      <MenuIcon />
-    </IconButton>
+          <MenuIcon />
+        </IconButton>
       </>
-  )
-  }
+    );
+  };
   return (
     <Container>
       <CenterContainer>
@@ -80,26 +75,23 @@ function Navbar() {
           <p>AcceleratorApp</p>
         </LogoContainer>
         <LinkContainer>
-        
-        {
-          isMobile? <DrawerComponent/> : <>
-          <NavLinks>Community</NavLinks>
-          <NavLinks>Modules</NavLinks>
-          <NavLinks>Company</NavLinks>
-          <NavLinks>Pricing</NavLinks>
-          <BorderButton
-            text={"Sign in"}
-            border={"white"}
-            textColor={"primary"}
-            width={"100px"}
-          />
-          <FillButton
-            text={"Request a demo"}
-            textColor={"main"}
-          />
-          </>
-        }
-          
+          {isMobile ? (
+            <DrawerComponent />
+          ) : (
+            <>
+              <NavLinks>Community</NavLinks>
+              <NavLinks>Modules</NavLinks>
+              <NavLinks>Company</NavLinks>
+              <NavLinks>Pricing</NavLinks>
+              <BorderButton
+                text={"Sign in"}
+                border={"white"}
+                textColor={"primary"}
+                width={"100px"}
+              />
+              <FillButton text={"Request a demo"} textColor={"main"} />
+            </>
+          )}
         </LinkContainer>
       </CenterContainer>
     </Container>
