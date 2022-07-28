@@ -31,7 +31,7 @@ function FooterLinks({ val }) {
       <List disablePadding className={val.heading}>
         {val.data.map((link, index) => {
           return (
-            <ListItem disablePadding style={{ marginTop: "8px" }}>
+            <ListItem disablePadding style={{ marginTop: "8px" }} key={`${link.text} ${index} `}>
               <ListItemText>
                 <FooterLink to="/">{link.text}</FooterLink>
               </ListItemText>

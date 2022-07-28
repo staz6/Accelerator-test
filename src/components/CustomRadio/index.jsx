@@ -26,7 +26,7 @@ export const RadioButton = styled(Button)(({ theme, marginTop }) => ({
 
 function CustomRadio({ icon, marginTop, index }) {
   return (
-    <RadioButton marginTop={marginTop} index={index}>
+    <RadioButton marginTop={marginTop} key={icon}>
       <img src={icon} alt={"icon"} className={"icon"} />
     </RadioButton>
   );

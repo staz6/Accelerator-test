@@ -156,7 +156,7 @@ const footerData = [
 ];
 
 const FooterInput = styled(Input)(({ theme }) => ({
-  width: "54vh",
+  width: "58vh",
   borderBottom: "1px solid rgba(255, 255, 255, 0.4)",
   marginTop: "2vh",
   marginLeft: "auto",
@@ -166,14 +166,16 @@ const FooterInput = styled(Input)(({ theme }) => ({
     "&::placeholder": {
       color: "rgba(255, 255, 255, 0.2)",
     },
+    color:theme.palette.primary.primary,
     width: "100%",
   },
-  [theme.breakpoints.down("md")]: {
-    width: "60%",
+  [theme.breakpoints.down("lg")]: {
+    width: "50%",
   },
-  [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.down("sm")]: {
     width: "80%",
   },
+  
 }));
 
 const FooterLinksContainer = styled(Grid)(({ theme }) => ({
@@ -193,7 +195,7 @@ function Footer() {
         </p>
       </HeadingSection>
       <FooterInput
-        placeholder={"email"}
+        placeholder={"Your email"}
         endAdornment={
           <ArrowRightAltIcon style={{ fill: "rgba(255, 255, 255, 1)" }} />
         }

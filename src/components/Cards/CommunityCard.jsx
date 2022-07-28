@@ -73,7 +73,7 @@ const Bar = styled(Divider)(({ theme }) => ({
 
 function CommunityCard({ title, index }) {
   return (
-    <Grid item lg={4} md={4} sm={6} xs={12}>
+    <Grid item lg={4} md={4} sm={6} xs={12} key={index}>
       <CustomCard>
         <CardHeader
           avatar={
@@ -94,9 +94,9 @@ function CommunityCard({ title, index }) {
           </Typography>
           <Bar />
           <Typography className={"featuers"}>Popular Featuers</Typography>
-          {[...Array(3)].map((val, index) => {
+          {[...Array(3)].map((val, i) => {
             return (
-              <ListItem disablePadding index={index}>
+              <ListItem disablePadding key={i}>
                 <ListItemIcon>
                   <CheckCircleIcon className={"checkIcon"} />
                 </ListItemIcon>

@@ -23,7 +23,7 @@ export const CenterFlexDiv = styled("div")(({ theme }) => ({
   alignItems: "center",
 }));
 
-export const subText = styled("p")(({ theme, color }) => ({
+export const SubText = styled("p")(({ theme, color }) => ({
   color: theme.palette.primary[color],
   fontSize: "14px",
   lineHeight: "23px",

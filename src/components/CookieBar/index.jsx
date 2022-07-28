@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import FillButton from "../CustomButton/FillButton";
 import BorderButton from "../CustomButton/BorderButton";
-import { CenterDiv, CenterFlexDiv } from "../../styles/styles";
+import { CenterDiv, CenterFlexDiv, SubText } from "../../styles/styles";
 import { Grid } from "@mui/material";
 
 const CookieContainer = styled(Grid)(({ theme }) => ({
@@ -39,10 +39,10 @@ function CookieBar() {
   return (
     <CookieContainer container>
       <TextContainer item lg={6} md={12} sm={12} xs={12}>
-        <subText color={"cookieBar"}>
+        <SubText color={"cookieBar"}>
           By using this site on the AcceleratorApp network, you agree with our
           use of cookies.
-        </subText>
+        </SubText>
       </TextContainer>
       <ButtonContainer container lg={6} md={12} sm={12} xs={12}>
         <Grid item lg={3} md={4} sm={4} xd={3}>
@@ -62,9 +62,9 @@ function CookieBar() {
         </Grid>
 
         <Grid item lg={3} md={3} sm={3} xd={12}>
-          <subText style={{ color: "#0D122B" }}>
+          <SubText style={{ color: "#0D122B" }}>
             Read our cookie policy.
-          </subText>
+          </SubText>
         </Grid>
       </ButtonContainer>
     </CookieContainer>
