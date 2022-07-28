@@ -18,6 +18,7 @@ const ButtonContainer = styled(Button)(
     },
     "&:hover":{
         backgroundColor: bg ? theme.palette.background[bg] : theme.palette.background.primary,
+        opacity:"0.8"
     }
   })
 );

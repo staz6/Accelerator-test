@@ -16,6 +16,7 @@ const ButtonContainer = styled(Button)(
     },
     "&:hover":{
         backgroundColor: "inherit",
+        opacity:"0.8"
     }
   })
 );

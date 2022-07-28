@@ -50,13 +50,13 @@ const NavLinks = styled("p")(({ theme }) => ({
   fontSize: "1em",
   cursor: "pointer",
   "&:hover":{
-    // color:theme.palette.primary.main
+    opacity:"0.8"
   }
 }));
 
 function Navbar() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   const [openDrawer, setOpenDrawer] = useState(false);
   const Drawer = () => {
     return (
