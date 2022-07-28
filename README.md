@@ -12,7 +12,7 @@ Basic Gatsby one page app
 ## Installing App
 
 Steps:
-- Clone the git repository [Accelerator test](https://github.com/staz6/Accelerator-test
+- Clone the git repository [Accelerator test](https://github.com/staz6/Accelerator-test)
 - cd into directory
 - run `npm install`
 - run `npm start`
