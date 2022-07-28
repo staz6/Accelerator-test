@@ -46,7 +46,7 @@ const ContentContainer = styled("div")(({ theme }) => ({
     },
   },
   "& .mainHeading": {
-    fontSize: "72px",
+    fontSize: "4.5em",
     fontWeight: 700,
     color: theme.palette.primary.primary,
     paddingTop: "4vh",
@@ -56,6 +56,7 @@ const ContentContainer = styled("div")(({ theme }) => ({
     },
   },
   "& .subHeading": {
+    fontSize:"1.1em",
     paddingTop: "1vh",
     fontWeight: 400,
     color: theme.palette.primary.subGrey,
